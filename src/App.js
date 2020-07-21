@@ -2,8 +2,10 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "antd/dist/antd.css";
+import { fetch_news } from "./actions";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +20,18 @@ function App() {
           rel="noopener noreferrer">
           Learn React
         </a>
+        <button className="btn btn-dark" onClick={props.fetchNews}>
+          fetch news
+        </button>
       </header>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchNews: () => dispatch(fetch_news),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);
