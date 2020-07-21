@@ -2,6 +2,7 @@ import axios from "axios";
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
+export const HIDE_MODAL = "HIDE_MODAL";
 
 export const fetch_news = (dispatch) => {
   async function fetchArticles(dispatch) {
@@ -21,4 +22,8 @@ export const fetch_news = (dispatch) => {
   fetchArticles(dispatch);
 };
 
-//export default fetch_news;
+export const hide_modal = () => {
+  return {
+    type: HIDE_MODAL,
+  };
+};
