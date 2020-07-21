@@ -1,38 +1,13 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
 import "../styles/style.css";
 import { List, Card } from "antd";
+import { connect } from "react-redux";
 
 class Articles extends Component {
   state = {};
   render() {
     const { Meta } = Card;
-    const data = [
-      {
-        title: "Title 1",
-        author: "Author 1",
-        date: "20-01-2020",
-        article_url: "www.bbc.com",
-      },
-      {
-        title: "Title 2",
-        author: "Author 2",
-        date: "20-01-2020",
-        article_url: "www.bbc.com",
-      },
-      {
-        title: "Title 3",
-        author: "Author 3",
-        date: "20-01-2020",
-        article_url: "www.bbc.com",
-      },
-      {
-        title: "Title 4",
-        author: "Author 4",
-        date: "20-01-2020",
-        article_url: "www.bbc.com",
-      },
-    ];
+    const { articles } = this.props;
     return (
       <div className="d-flex flex-column align-items-center">
         <h1 className="text-center font-weight-bold">TechNews</h1>
@@ -47,23 +22,30 @@ class Articles extends Component {
               xl: 3,
               xxl: 3,
             }}
-            dataSource={data}
+            dataSource={articles}
             className="mx-auto"
             renderItem={(item) => (
               <List.Item>
                 <Card
                   style={{ width: 300 }}
                   className="rounded"
-                  cover={<img alt="example" src={logo} />}>
+                  cover={
+                    <img
+                      alt="article"
+                      loading="lazy"
+                      style={{ height: 280 }}
+                      src={item.image}
+                    />
+                  }>
                   <Meta
                     title={item.title}
                     description={
                       <div>
                         <div className="d-flex flex-row justify-content-between">
-                          <span className="author">{item.author}</span>
-                          <span className="date">{item.date}</span>
+                          <span className="author">{item.source.name}</span>
+                          <span className="date">{item.publishedAt}</span>
                         </div>
-                        <a href={item.article_url} className="article-url">
+                        <a href={item.url} className="article-url">
                           Read article
                         </a>
                       </div>
@@ -79,4 +61,8 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+const mapStateToProps = (state) => {
+  return { articles: state.news.data.articles };
+};
+
+export default connect(mapStateToProps, null)(Articles);
