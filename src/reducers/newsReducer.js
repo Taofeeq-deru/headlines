@@ -1,7 +1,7 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAILURE } from "../actions";
 
 const newsReducer = (
-  state = { isLoading: false, hasError: false, articles: [] },
+  state = { isLoading: false, hasError: false, data: {} },
   action
 ) => {
   switch (action.type) {
@@ -16,7 +16,7 @@ const newsReducer = (
         ...state,
         isLoading: false,
         hasError: false,
-        articles: action.payload,
+        data: action.payload,
       };
     case FETCH_FAILURE:
       return {
