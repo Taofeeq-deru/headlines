@@ -1,13 +1,17 @@
 import React from "react";
 import { Modal, Button } from "antd";
-import { hide_modal } from "../actions";
+import { hide_modal, fetch_news } from "../actions";
 import { connect } from "react-redux";
 
 class ModalBox extends React.Component {
   state = {};
 
-  handleButton = () => {
+  handleButton = (e) => {
     this.props.hideModal();
+    const topic = e.target.innerHTML;
+    const q = topic.toLowerCase();
+    console.log(q);
+    this.props.fetchNews();
   };
 
   render() {
@@ -22,19 +26,25 @@ class ModalBox extends React.Component {
           <h3 className="text-center">Welcome to TechNews</h3>
           <p className="text-center">Select tech topic you want to view</p>
           <div className="d-flex flex-row justify-content-around flex-wrap py-3">
-            <Button key="hacking" onClick={this.handleButton}>
-              Hacking
+            <Button key="hack" data-query="hack" onClick={this.handleButton}>
+              Hack
             </Button>
-            <Button key="javascript" onClick={this.handleButton}>
+            <Button
+              key="javascript"
+              data-query="javascript"
+              onClick={this.handleButton}>
               Javascipt
             </Button>
-            <Button key="php" onClick={this.handleButton}>
+            <Button key="php" data-query="php" onClick={this.handleButton}>
               PHP
             </Button>
-            <Button key="java" onClick={this.handleButton}>
+            <Button key="java" data-query="java" onClick={this.handleButton}>
               Java
             </Button>
-            <Button key="python" onClick={this.handleButton}>
+            <Button
+              key="python"
+              data-query="python"
+              onClick={this.handleButton}>
               Python
             </Button>
           </div>
@@ -50,9 +60,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    hideModal: () => {
-      dispatch(hide_modal());
-    },
+    hideModal: () => dispatch(hide_modal()),
+    fetchNews: () => dispatch(fetch_news),
   };
 };
 

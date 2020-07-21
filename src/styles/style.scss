@@ -1,0 +1,40 @@
+.article-url {
+  color: rgb(43, 182, 228);
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.Placeholder {
+  text-align: center;
+  .Placeholder-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    .Placeholder-logo {
+      height: 40vmin;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Placeholder-logo {
+    animation: Placeholder-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes Placeholder-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
