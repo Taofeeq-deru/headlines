@@ -8,7 +8,7 @@ export const fetch_news = (dispatch) => {
     dispatch({ type: FETCH_START });
     try {
       const result = await axios(
-        `https://newsapi.org/v2/everything?q=javascript&apiKey=${process.env.REACT_APP_API_KEY}`
+        `https://gnews.io/api/v3/search?q=javascript&image=required&token=${process.env.REACT_APP_API_KEY}`
       );
       console.log(result.data.articles);
       dispatch({ type: FETCH_SUCCESS, payload: result.data.articles });
