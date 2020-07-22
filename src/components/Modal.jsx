@@ -11,7 +11,8 @@ class ModalBox extends React.Component {
     const topic = e.target.innerHTML;
     const q = topic.toLowerCase();
     console.log(q);
-    this.props.fetchNews();
+    const query = `${q} programming`;
+    this.props.fetchNews(query);
   };
 
   render() {
@@ -33,7 +34,7 @@ class ModalBox extends React.Component {
               key="javascript"
               data-query="javascript"
               onClick={this.handleButton}>
-              Javascipt
+              Javascript
             </Button>
             <Button key="php" data-query="php" onClick={this.handleButton}>
               PHP
@@ -61,7 +62,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     hideModal: () => dispatch(hide_modal()),
-    fetchNews: () => dispatch(fetch_news),
+    fetchNews: (query) => dispatch(fetch_news(query)),
   };
 };
 
