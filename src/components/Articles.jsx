@@ -11,7 +11,7 @@ class Articles extends Component {
     return (
       <div className="d-flex flex-column align-items-center">
         <h1 className="text-center font-weight-bold">TechNews</h1>
-        <div className="d-flex flex-row justify-content-center px-5">
+        <div className="d-flex flex-row justify-content-center px-5 px-lg-2">
           <List
             grid={{
               gutter: 0,
@@ -20,7 +20,7 @@ class Articles extends Component {
               md: 2,
               lg: 3,
               xl: 3,
-              xxl: 3,
+              xxl: 4,
             }}
             dataSource={articles}
             className="mx-auto"
@@ -28,7 +28,7 @@ class Articles extends Component {
               <List.Item>
                 <Card
                   style={{ width: 300 }}
-                  className="rounded"
+                  className="rounded mx-lg-1"
                   cover={
                     <img
                       alt="article"
@@ -45,7 +45,10 @@ class Articles extends Component {
                           <span className="author">{item.source.name}</span>
                           <span className="date">{item.publishedAt}</span>
                         </div>
-                        <a href={item.url} className="article-url">
+                        <a
+                          href={item.url}
+                          className="article-url"
+                          target="article">
                           Read article
                         </a>
                       </div>

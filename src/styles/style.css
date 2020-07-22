@@ -1,9 +1,30 @@
-.article-url {
+.article-url,
+.view-search {
   color: #2bb6e4;
+}
+
+.article-url:hover,
+.view-search:hover {
+  cursor: pointer;
+  color: #1d7e9e;
+}
+
+.btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
 }
 
 .w-90 {
   width: 90%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .Placeholder {

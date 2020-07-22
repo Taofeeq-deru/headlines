@@ -1,6 +1,7 @@
 import React from "react";
+import SearchForm from "./SearchForm";
 import { Modal, Button } from "antd";
-import { hide_modal, fetch_news } from "../actions";
+import { hide_modal, fetch_news, show_search } from "../actions";
 import { connect } from "react-redux";
 
 class ModalBox extends React.Component {
@@ -49,6 +50,13 @@ class ModalBox extends React.Component {
               Python
             </Button>
           </div>
+          <div className="d-flex flex-column align-items-center my-2">
+            <p className="font-weight-bold">OR</p>
+            <p className="view-search" onClick={this.props.showSearch}>
+              Click to search for preferred topic
+            </p>
+            <SearchForm />
+          </div>
         </Modal>
       </div>
     );
@@ -63,6 +71,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     hideModal: () => dispatch(hide_modal()),
     fetchNews: (query) => dispatch(fetch_news(query)),
+    showSearch: () => dispatch(show_search()),
   };
 };
 

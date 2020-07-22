@@ -1,9 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import newsReducer from "./newsReducer";
 import modalReducer from "./modalReducer";
+import searchReducer from "./searchReducer";
 import thunk from "redux-thunk";
 
-const allReducers = combineReducers({ news: newsReducer, modal: modalReducer });
+const allReducers = combineReducers({
+  news: newsReducer,
+  modal: modalReducer,
+  search: searchReducer,
+});
 
 const middleWare = [thunk];
 
