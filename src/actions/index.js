@@ -11,7 +11,6 @@ export const fetch_news = (query) => async (dispatch) => {
     const result = await axios(
       `https://gnews.io/api/v3/search?q=${query}&token=${process.env.REACT_APP_API_KEY}`
     );
-    console.log(result.data);
     dispatch({ type: FETCH_SUCCESS, payload: result.data });
   } catch (err) {
     dispatch({ type: FETCH_FAILURE, payload: err.message });

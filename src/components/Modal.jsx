@@ -12,7 +12,6 @@ class ModalBox extends React.Component {
     const topic = e.target.innerHTML;
     const q = topic.toLowerCase();
     const query = `${q} programming`;
-    console.log(query);
     this.props.fetchNews(query);
   };
 
