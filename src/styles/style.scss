@@ -9,6 +9,31 @@
   }
 }
 
+.cover {
+  position: relative;
+  cursor: pointer;
+  .desc {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    background: $opaqueBg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+      color: $textTitle;
+    }
+    .description {
+      color: $textDesc;
+      font-size: 0.8em;
+      line-height: 100%;
+    }
+  }
+  &:hover .desc {
+    opacity: 1;
+  }
+}
+
 .btn:focus {
   box-shadow: none;
   outline: none;
