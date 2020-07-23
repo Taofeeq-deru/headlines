@@ -3,7 +3,7 @@ import { HIDE_MODAL } from "../actions";
 const modalReducer = (state = true, action) => {
   switch (action.type) {
     case HIDE_MODAL:
-      return (state = false);
+      return false;
     default:
       return state;
   }

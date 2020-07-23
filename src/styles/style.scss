@@ -1,9 +1,29 @@
-.article-url {
-  color: rgb(43, 182, 228);
+@import "./variables";
+
+.article-url,
+.view-search {
+  color: $textLink;
+  &:hover {
+    cursor: pointer;
+    color: $hoverLink;
+  }
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .w-90 {
   width: 90%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .Placeholder {
@@ -16,7 +36,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: $textWhite;
     .Placeholder-logo {
       height: 40vmin;
       pointer-events: none;
