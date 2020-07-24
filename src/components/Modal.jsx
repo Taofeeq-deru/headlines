@@ -11,7 +11,6 @@ class ModalBox extends React.Component {
     this.props.hideModal();
     const topic = e.target.innerHTML;
     const q = topic.toLowerCase();
-    console.log(q);
     const query = `${q} programming`;
     this.props.fetchNews(query);
   };
@@ -53,7 +52,7 @@ class ModalBox extends React.Component {
           <div className="d-flex flex-column align-items-center my-2">
             <p className="font-weight-bold">OR</p>
             <p className="view-search" onClick={this.props.showSearch}>
-              Click to search for preferred topic
+              Click here to search for preferred topic
             </p>
             <SearchForm />
           </div>

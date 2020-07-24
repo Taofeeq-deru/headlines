@@ -9,6 +9,42 @@
   color: #1d7e9e;
 }
 
+.cover {
+  position: relative;
+  cursor: pointer;
+}
+
+.cover .desc {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cover .desc .title {
+  color: #000000;
+}
+
+.cover .desc .description {
+  color: #343a40;
+  font-size: 0.8em;
+  line-height: 100%;
+}
+
+.cover:hover .desc {
+  opacity: 1;
+}
+
 .btn:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
