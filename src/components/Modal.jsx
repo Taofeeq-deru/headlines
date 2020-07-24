@@ -27,23 +27,37 @@ class ModalBox extends React.Component {
           <h3 className="text-center">Welcome to TechNews</h3>
           <p className="text-center">Select tech topic you want to view</p>
           <div className="d-flex flex-row justify-content-around flex-wrap py-3">
-            <Button key="hack" data-query="hack" onClick={this.handleButton}>
+            <Button
+              key="hack"
+              className="my-2"
+              data-query="hack"
+              onClick={this.handleButton}>
               Hack
             </Button>
             <Button
               key="javascript"
+              className="my-2"
               data-query="javascript"
               onClick={this.handleButton}>
               Javascript
             </Button>
-            <Button key="php" data-query="php" onClick={this.handleButton}>
+            <Button
+              key="php"
+              className="my-2"
+              data-query="php"
+              onClick={this.handleButton}>
               PHP
             </Button>
-            <Button key="java" data-query="java" onClick={this.handleButton}>
+            <Button
+              key="java"
+              className="my-2"
+              data-query="java"
+              onClick={this.handleButton}>
               Java
             </Button>
             <Button
               key="python"
+              className="my-2"
               data-query="python"
               onClick={this.handleButton}>
               Python
