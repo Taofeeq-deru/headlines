@@ -11,6 +11,9 @@ class Articles extends Component {
     return (
       <div className="d-flex flex-column align-items-center">
         <h1 className="text-center font-weight-bold">TechNews</h1>
+        <p className="text-center text-muted">
+          Refresh page to select new topic
+        </p>
         <div className="d-flex flex-row justify-content-center px-5 px-lg-2">
           <List
             grid={{

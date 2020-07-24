@@ -9,7 +9,7 @@ export const fetch_news = (query) => async (dispatch) => {
   dispatch({ type: FETCH_START });
   try {
     const result = await axios(
-      `https://gnews.io/api/v3/search?q=${query}&token=${process.env.REACT_APP_API_KEY}`
+      `https://gnews.io/api/v3/search?q=${query}&max=20&token=${process.env.REACT_APP_API_KEY}`
     );
     dispatch({ type: FETCH_SUCCESS, payload: result.data });
   } catch (err) {

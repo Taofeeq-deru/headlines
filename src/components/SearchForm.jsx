@@ -15,22 +15,26 @@ class SearchForm extends Component {
   render() {
     return (
       <div className={this.props.search}>
-        <form className="form-inline" onSubmit={this.handleForm}>
-          <div className="form-group">
-            <label htmlFor="search" className="sr-only">
-              Search
-            </label>
-            <input
-              type="search"
-              name="search"
-              id="search"
-              className="form-control"
-              placeholder="Search for topic"
-            />
+        <form className="form" onSubmit={this.handleForm}>
+          <div className="form-row">
+            <div className="form-group col-8">
+              <label htmlFor="search" className="sr-only">
+                Search
+              </label>
+              <input
+                type="search"
+                name="search"
+                id="search"
+                className="form-control mx-2"
+                placeholder="Search for topic"
+              />
+            </div>
+            <div className="form-group col-4">
+              <button type="submit" className="btn btn-primary mx-2">
+                Search
+              </button>
+            </div>
           </div>
-          <button type="submit" className="btn btn-primary mx-2">
-            Search
-          </button>
         </form>
       </div>
     );
